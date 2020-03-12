@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A48EA68-C78E-49D8-BF46-2F5A3415018A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Аdaptation</RootNamespace>
+    <AssemblyName>Аdaptation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Аdaptation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.DataAccess\Framework.DataAccess.csproj">
+      <Project>{6560f2bb-95c6-496b-931e-af12c3813f3f}</Project>
+      <Name>Framework.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.IoC.DependencyInjection\Framework.IoC.DependencyInjection.csproj">
+      <Project>{491bde61-d91d-4df9-a107-f7416996e2a8}</Project>
+      <Name>Framework.IoC.DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Mapper\Framework.Mapper.csproj">
+      <Project>{52c91a4b-8905-4365-90eb-60fc40029bb8}</Project>
+      <Name>Framework.Mapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSystem.BLL.Model\StudentSystem.BLL.Model.csproj">
+      <Project>{82128378-1a61-40b8-bde2-c73697617fc6}</Project>
+      <Name>StudentSystem.BLL.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSystem.Client.Model\StudentSystem.Client.Model.csproj">
+      <Project>{b167c39d-53d5-4fda-9557-c59918f89c87}</Project>
+      <Name>StudentSystem.Client.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSystem.Data.Model\StudentSystem.Data.Model.csproj">
+      <Project>{a75d4e7d-b0b2-46d7-be20-44af76efd1e3}</Project>
+      <Name>StudentSystem.Data.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSystem.Data\StudentSystem.Data.csproj">
+      <Project>{e963ef33-0732-46c6-af50-965bee6f7497}</Project>
+      <Name>StudentSystem.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

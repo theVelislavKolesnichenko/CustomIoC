@@ -1,0 +1,67 @@
+﻿@*@model StudentSystem.Client.Model.ResultList*@
+@model List<StudentSystem.Client.Model.ResultList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="text-align: center;">Дипломна работа ТУ Варна 2015</h1>
+<h1 style="text-align: center;">Примерно използване на библиотека за модулни приловения в Web проект</h1>
+
+<head>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table#t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<table id="t01">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(string.Format("{0}", @item.Title), "Profile", "Student", new { id = item.Id }, null)
+            </td>
+            <td>
+                @Html.ActionLink(string.Format("{0}", @item.SubTitle), "Profile", "Student", new { id = item.Id }, null)
+            </td>
+            <td>
+                @item.Age
+            </td>
+        </tr>
+    }
+
+    
+</table>
+
+

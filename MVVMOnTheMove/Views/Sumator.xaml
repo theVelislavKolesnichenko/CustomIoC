@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MVVMOnTheMove.Views.Sumator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:MVVMOnTheMove.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <viewModels:ViewModelSumator/>
+    </UserControl.DataContext>
+    <StackPanel>
+        <!--<TextBox Name="tbFirst"/>-->
+
+        <ComboBox Name="tbFirst" Text="Is not open">
+            <ComboBoxItem  Name="cbi1">Fish</ComboBoxItem>
+            <ComboBoxItem  Name="cbi2">Vegetables</ComboBoxItem>
+            <ComboBoxItem  Name="cbi3">Fruit</ComboBoxItem>
+        </ComboBox>
+
+        <TextBox Name="tbSecond"/>
+        <Button Content="Calc" Click="ButtonSum_Click" />
+        <!--<Button Content="Subtract" Click="ButtonSubtract_Click" />-->
+        <TextBlock Text="{Binding Result}"/>
+        <ListView ItemsSource="{Binding PreviousResult}"/>
+    </StackPanel>
+</UserControl>
